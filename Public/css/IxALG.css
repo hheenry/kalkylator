@@ -1,0 +1,38 @@
+:root {
+    --background: #1C1B41;
+    --color-text-primary: #ABC3DF;
+    --color-text-secondary: #427AA1;
+    --color-one: #EBF2FA;
+    --color-two: #EC6363;
+    --hover: #474564 25%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: 400 14px Oswald;
+    background: var(--background);
+    color: var(--color-text-secondary);
+    line-height: 1.4;
+    transition: all 0.5s;
+}
+
+html {
+    user-select: none;
+}
+
+html {
+    display: -moz-box;
+    display: flex;
+    -moz-box-pack: center;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.infos h4 {
+    
+}
