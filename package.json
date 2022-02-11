@@ -1,7 +1,7 @@
 {
   "name": "kalkylator",
   "description": "The Kalkylator is a basic online calculator that uses JavaScript to do the calculations, as well as having an elegant and intuitive look.",
-  "version": "B2.0",
+  "version": "B2.1",
   "main": "index.html",
   "author": {
       "name": "Henry Rodrigues",
