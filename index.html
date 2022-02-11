@@ -1,107 +1,164 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-      <meta charset="utf-8"/>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      
-      <title>Calculadora | Henry Rodrigues</title>
-      
-      <link href="/public/css/COsqs7FU.css" rel="stylesheet" />
-      <link href="/public/img/Flavicon-two.ico" rel="shortcut icon" sizes="128x128"/>
-      <link rel="apple-touch-icon-precomposed" href="/public/img/Flavicon-one.ico"/>
+<html lang="pt-BR">
+<head>
+    <title>Kalkylator | Online calculator</title>
+    <meta name="description" content="The Kalkylator is a basic online calculator that uses JavaScript to do the calculations, as well as having an elegant and intuitive look.">
+    <meta name="robots" content="all">
+    <meta name="author" content="Henry Rodrigues">
+    <meta name="keywords" content="Calculadora, Henry, Henry Rodrigues, Henry developer, Henry Dev, Henry Programador, kalkylator">
 
-      <style type="text/css">
-        @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap");
-        @import url("https://fonts.googleapis.com/css2?family=Abel&family=Oswald:wght@400;500&display=swap");
-      </style>
+    <meta property="og:type" content="page">
+    <meta property="og:url" content="https://io.forml.site/kalkylator/">
+    <meta property="og:title" content="Kalkylator | Calculadora Online ">
+    <meta property="og:image" content="https://io.forml.site/kalkylator/assets/system/apple.png">
+    <meta property="og:description" content="Kalkylator é uma calculadora criada para portifólio, mas recebeu uma cara nova agora."> 
+    
+    <meta property="article:author" content="Henry Rodrigues">
 
-      <!-- Google Analitycs -->
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-MZZCWNPQHT"></script>
-      <script>
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Kallylator | Calculadora Online ">
+    <meta name="twitter:creator" content="@hhenryrodrigues">
+    <meta name="twitter:description" content="Kalkylator é uma calculadora criada para portifólio, mas recebeu uma cara nova agora.">
+
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MZZCWNPQHT"></script>
+    <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+	    gtag('js', new Date());
+
         gtag('config', 'G-MZZCWNPQHT');
-        gtag('event', 'login', {'method': 'Google'});
-        
-        // Configure a target
-        gtag('config', 'GA_MEASUREMENT_ID_1');
-        gtag('config', 'GA_MEASUREMENT_ID_2', { 'groups': 'agency' });
-        gtag('config', 'GA_MEASUREMENT_ID_3', { 'groups': 'agency' });
-        // Route this sign_in event to Analytics IDs in the 'agency' group:
-        gtag('event', 'sign_in', { 'send_to': 'agency' });
-        
-        // Get a reference to the form element, assuming
-        // it contains the ID attribute "signup-form".
-        var form = document.getElementById('signup-form');
-        
-        // Add a listener for the "submit" event.
-        form.addEventListener('submit', function(event) {
-        
-        // Prevent the browser from submitting the form
-        // and thus unloading the current page.
-        
-        event.preventDefault();
-        
-        // Send the event to Google Analytics and
-        // resubmit the form once the hit is done.
-        gtag('event', 'signup_form_complete', {
-            'event_callback': function() {
-            form.submit();
-            }
-        });
-        });
-      </script>
-  </head>
-  <body>
-    <main class="hills-main-styles">
-      <form name="sci-calc">
-        <table class="calculator" cellspacing="0" cellpadding="1">
-          <tr>
-            <td class="one" colspan="5"><input id="display" name="display" value="0" disabled></td>
-          </tr>
-          <tr class="line01">
-            <td><input type="button" id="user-color" class="a150253" name="btnMath" value="(" onclick="addChar(this.form.display, '(')"></td>
-            <td><input type="button" id="user-color" class="a150253" name="btnMath" value=")" onclick="addChar(this.form.display,')')"></td>
-            <td><input type="button" id="user-color" class="aa150253" name="btnTop" onclick="deleteChar(this.form.display)"></td>
-            <td><input type="button" id="user-color" class="a150253" name="btnMath" value="%" onclick=" percent(this.form.display)"></td>
-          </tr>
-          <tr class="line02">
-            <td><input type="button" id="user-color" class="a150253" name="btnOpps" value="π" onclick="addChar(this.form.display,'3.14159265359')"></td>
-            <td><input type="button" id="user-color" class="a150253" name="btnOpps" value="√" onclick="if(checkNum(this.form.display.value)) { sqrt(this.form) }"></td>
-            <td><input type="button" id="user-color" class="a150253" name="btnMath" value="&#177" onclick="changeSign(this.form.display)"></td>
-            <td><input type="button" id="user-color" class="a150253" name="btnOpps" value="x²" onclick="if(checkNum(this.form.display.value)) { square(this.form) }"></td>
-          </tr>
-          <tr class="line03">
-            <td><input type="button" class="a150253" name="btnNum" value="7" onclick="addChar(this.form.display, '7')"></td>
-            <td><input type="button" class="a150253" name="btnNum" value="8" onclick="addChar(this.form.display, '8')"></td>
-            <td><input type="button" class="a150253" name="btnNum" value="9" onclick="addChar(this.form.display, '9')"></td>
-            <td><input type="button" id="user-color" class="a150253" name="btnMath" value="X" onclick="addChar(this.form.display, '*')"></td>
-          </tr>
-          <tr class="line04">
-            <td><input type="button" class="a150253" name="btnNum" value="4" onclick="addChar(this.form.display, '4')"></td>
-            <td><input type="button" class="a150253" name="btnNum" value="5" onclick="addChar(this.form.display, '5')"></td>
-            <td><input type="button" class="a150253" name="btnNum" value="6" onclick="addChar(this.form.display, '6')"></td>
-            <td><input type="button" id="user-color" class="a150253" name="btnMath" value="+" onclick="addChar(this.form.display, '+')"></td>
-          </tr>
-          <tr class="line05">
-            <td><input type="button" class="a150253" name="btnNum" value="1" onclick="addChar(this.form.display, '1')"></td>
-            <td><input type="button" class="a150253" name="btnNum" value="2" onclick="addChar(this.form.display, '2')"></td>
-            <td><input type="button" class="a150253" name="btnNum" value="3" onclick="addChar(this.form.display, '3')"></td>
-            <td><input type="button" id="user-color" class="a150253" name="btnMath" value="-" onclick="addChar(this.form.display, '-')"></td>
-          </tr>
-          <tr class="line06">
-            <td><input type="button" class="reset" name="btnTop" value="C" onclick="this.form.display.value= 0 "></td>
-            <td><input type="button" class="a150253" name="btnNum" value="0" onclick="addChar(this.form.display, '0')"></td>
-            <td><input type="button" class="a150253" name="btnMath" value="." onclick="addChar(this.form.display, '.')"></td>
-            <td><input type="button" id="user-color" class="a150253" name="btnTop" value="=" onclick="if(checkNum(this.form.display.value)) { compute(this.form) }"></td>
-          </tr>
-        </tabel>
-      </form>
+    </script>
+
+    <!-- Config -->
+    <link rel="stylesheet" href="/asset/css/main.css">
+    <link rel="shortcut icon" href="/asset/system/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/asset/system/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/asset/system/apple.png">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="./public/icomoon.io/style.css">
+
+    <!-- Start - CSS Reset -->
+    <link rel="stylesheet" href="https://code.flcompy.com/tools/axe/V1/reset.css">
+    <!-- End - CSS Reset -->
+
+    <meta charset="utf-8">
+    <meta name="language" content="pt-BR">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="kalky-body">
+    <header class="kalky-header" id="header">
+        <section>
+            <h1>kalkylator</h1>
+            <a href="http://github.com/hheenry/kalkylator" title="GitHub - Kalkylator">
+                <i class="icon-github"></i>
+            </a>
+        </section>
+    </header>
+    <main class="kalky_main" id="main">
+        <section>
+            <form class="kalkylator" id="kalkylator">
+                <div class="kalky_display">
+                    <button class="_copy" id="copyDisplay">
+                        <i class="icon-copy"></i>
+                    </button>
+                    <input type="text" name="Display" id="display" class="_display" placeholder="0" disabled>
+                </div>
+                <ul class="kalky_list">
+                    <li class="kalky_option btn_kalky">
+                        <input type="button" class="_btn _85482" value="(" onclick="addChar(this.form.display, '(')">
+                    </li>
+                    <li class="kalky_option btn_kalky">
+                        <input type="button" class="_btn _85482" value=")" onclick="addChar(this.form.display,')')">
+                    </li>
+                    <li class="kalky_option btn_kalky">
+                        <input type="button" class="_btn _85482" value="%" onclick=" percent(this.form.display)">
+                    </li>
+                    <li class="kalky_option btn_kalky">
+                        <i class="icon-remove"></i>
+                        <input type="button" class="_btn _85482" name="btnTop" title="BackSpace" onclick="deleteChar(this.form.display)">
+                    </li>
+                    <li class="kalky_option btn_kalky">
+                        <input type="button" class="_btn _1785" value="7" onclick="addChar(this.form.display, '7')">
+                    </li>
+                    <li class="kalky_option btn_kalky">
+                        <input type="button" class="_btn _1785" value="8" onclick="addChar(this.form.display, '8')">
+                    </li>
+                    <li class="kalky_option btn_kalky">
+                        <input type="button" class="_btn _1785" value="9" onclick="addChar(this.form.display, '9')">
+                    </li>
+                    <li class="kalky_option btn_kalky">
+                        <input type="button" class="_btn _85482" value="x" onclick="addChar(this.form.display, '*')">
+                    </li>
+                    <li class="kalky_option btn_kalky">
+                        <input type="button" class="_btn _1785" value="4" onclick="addChar(this.form.display, '4')">
+                    </li>
+                    <li class="kalky_option btn_kalky">
+                        <input type="button" class="_btn _1785" value="5" onclick="addChar(this.form.display, '5')">
+                    </li>
+                    <li class="kalky_option btn_kalky">
+                        <input type="button" class="_btn _1785" value="6" onclick="addChar(this.form.display, '6')">
+                    </li>
+                    <li class="kalky_option btn_kalky">
+                        <input type="button" type="button" class="_btn _85482" value="-" onclick="addChar(this.form.display, '-')">
+                    </li>
+                    <li class="kalky_option btn_kalky">
+                        <input type="button" class="_btn _1785" value="1" onclick="addChar(this.form.display, '1')">
+                    </li>
+                    <li class="kalky_option btn_kalky">
+                        <input type="button" class="_btn _1785" value="2" onclick="addChar(this.form.display, '2')">
+                    </li>
+                    <li class="kalky_option btn_kalky">
+                        <input type="button" class="_btn _1785" value="3" onclick="addChar(this.form.display, '3')">
+                    </li>
+                    <li class="kalky_option btn_kalky">
+                        <input type="button" type="button" class="_btn _85482" value="+" onclick="addChar(this.form.display, '+')">
+                    </li>
+                    <li class="kalky_option btn_kalky">
+                        <input type="button" class="_btn _5744" value="C" onclick="this.form.display.value=0">
+                    </li>
+                    <li class="kalky_option btn_kalky">
+                        <input type="button" class="_btn _1785" value="0" onclick="addChar(this.form.display, '0')">
+                    </li>
+                    <li class="kalky_option btn_kalky">
+                        <input type="button" class="_btn _5744" value="." onclick="addChar(this.form.display, '.')">
+                    </li>
+                    <li class="kalky_option btn_kalky">
+                        <input type="button" class="_btn _85482" value="=" onclick="if(checkNum(this.form.display.value)) { compute(this.form) }">
+                    </li>
+                </ul>
+            </form>
+        </section>
     </main>
-    <!-- <footer><p>V.1.0.5</p></footer> -->
-  </body>
-  <script type="text/javascript" src="/public/javascript/3OkKrCVI.js"></script>
+    <footer class="kalky-footer" id="footer">
+        <section>
+            <p>©&nbsp;<span id="year"></span>&nbsp;hheenry.</p>
+            <p>Powered by <a href="#">hheenry.com</a>.</p>
+        </section>
+    </footer>
+    <div class="copypopup" id="copyMensage" title="Kalkylator" style="display:none;">
+        <p>Calculo copiado com sucesso.</p>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script> 
+        $( function() {
+            $( ".widget input[type=submit], .widget a, .widget button" ).button();
+            $("#copyDisplay" ).click( function( event ) {
+                event.preventDefault();
+                $( "#copyMensage" ).dialog();
+            });
+        });
+    </script>
+    <script>
+        const ano = document.getElementById("year");
+        const copyright = new Date();
+
+        ano.innerHTML = copyright.getFullYear();
+    </script>
+    <script src="/asset/js/kalkylator.js"></script>
+</body>
 </html>
