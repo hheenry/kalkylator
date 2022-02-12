@@ -1,0 +1,22 @@
+{
+  "name": "kalkylator",
+  "description": "The Kalkylator is a basic online calculator that uses JavaScript to do the calculations, as well as having an elegant and intuitive look.",
+  "version": "B2.2",
+  "main": "index.html",
+  "author": {
+      "name": "Henry Rodrigues",
+      "email": "henry.rodrigues@flcompy.com",
+      "homepage": "hheenry.com"
+  },
+  "license": "MIT",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/hheenry/kalkylator"
+  },
+  "homepage": "https://io.forml.site/kalkylator/",
+  "keywords": [
+      "Kalkylator",
+      "hheenry",
+      "Henry Rodrigues"
+  ]
+}
