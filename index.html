@@ -31,10 +31,10 @@
     </script>
 
     <!-- Config -->
-    <link rel="stylesheet" href="/asset/css/main.css">
-    <link rel="shortcut icon" href="/asset/system/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="/asset/system/favicon.png" type="image/png">
-    <link rel="apple-touch-icon" href="/asset/system/apple.png">
+    <link rel="stylesheet" href="./asset/css/main.css">
+    <link rel="shortcut icon" href="./asset/system/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./asset/system/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="./asset/system/apple.png">
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="./public/icomoon.io/style.css">
@@ -145,6 +145,13 @@
     </div>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        document.getElementById('copyDisplay').addEventListener('click', clipboardCopy);
+        async function clipboardCopy() {
+            let text = document.querySelector("#display").value;
+            await navigator.clipboard.writeText(text);
+        }
+    </script>
     <script> 
         $( function() {
             $( ".widget input[type=submit], .widget a, .widget button" ).button();
@@ -160,6 +167,6 @@
 
         ano.innerHTML = copyright.getFullYear();
     </script>
-    <script src="/asset/js/kalkylator.js"></script>
+    <script src="./asset/js/kalkylator.js"></script>
 </body>
 </html>
